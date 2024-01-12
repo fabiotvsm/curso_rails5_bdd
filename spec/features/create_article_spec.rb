@@ -29,7 +29,7 @@ RSpec.feature "Create Article" do
         expect(page).to have_content("Article has not been created")
         expect(page).to have_content("Title can't be blank")
         expect(page).to have_content("Body can't be blank")
-        # expect(page.current_path).to eq(articles_path)
+        expect(page.current_path).to eq(articles_path)
 
     end
   
