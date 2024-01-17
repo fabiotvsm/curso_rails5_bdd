@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user = current_user
     if @article.save
        flash[:sucess] = "The article has been created"
        redirect_to articles_path
@@ -25,6 +26,11 @@ class ArticlesController < ApplicationController
   end
 
   def edit   
+    unless @article.user == current_user
+      flash[:alert] = "You can't edit others people articles"
+      redirect_to root_path
+      
+    end
   end
 
   def update
@@ -38,8 +44,14 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article.destroy
-    redirect_to articles_path
+    unless @article.user == current_user
+      flash[:alert] = "You can't edit others people articles"
+      redirect_to root_path
+      
+    else 
+      @article.destroy
+      redirect_to articles_path
+    end
   end
 
   private
