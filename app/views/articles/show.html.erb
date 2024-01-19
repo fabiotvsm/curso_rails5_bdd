@@ -5,6 +5,13 @@
 <h1>
     <%= @article.title %>
 </h1>
+<div>
+    <% if @article.user.nome == nil %>
+    <h3>Created by: <%= @article.user.email %> </h3>
+    <% else %>
+    <h3>Created by: <%= @article.user.nome %> </h3>
+    <% end %>
+</div>
 <div class="body">
     <%= @article.body %>
 </div>
