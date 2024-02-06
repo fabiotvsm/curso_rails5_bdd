@@ -1,13 +1,10 @@
-<h1>Users#edit</h1>
+<h1 class="text-center">User</h1>
 <div>
 <%# <%= link_to "User", user_path(@user) %>
-<h3>
-    <%= link_to "Index", root_path %>
-</h3>
 </div>
-<p>Find me in app/views/users/edit.html.erb</p>
-<h3> email </h3>
+<h3> E-mail </h3>
 <%= @user.email %>
+<br>
 <div class='form-group'> 
      <%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
    <div class='control-label col-md-1'>
