@@ -41,6 +41,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-sass', '~>3.3.6'
 gem 'autoprefixer-rails', '~>6.3.7'
 
+gem 'jquery-rails'
+
 group :development, :test do
   gem 'rspec-rails', '3.9.1'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
